@@ -26,18 +26,18 @@ const Cart: FC = () => {
 
         const checkOutHandler = async () => {
             const stripe = await getStripe();
-    
-            const { data } = await axios.post('/api/stripe', {
-                cartItems,
-                userEmail: session?.user?.email,
-            });
-    
-            if (!data) return;
-    
-            localStorage.removeItem('cart');
-    
-            stripe.redirectToCheckout({ sessionId: data.id });
-        };
+
+		const { data } = await axios.post('/api/stripe', {
+			cartItems,
+			userEmail: session?.user?.email,
+		});
+
+		if (!data) return;
+
+		localStorage.removeItem('cart');
+
+		stripe.redirectToCheckout({ sessionId: data.id });
+	};
     
 
     useEffect(() => {
