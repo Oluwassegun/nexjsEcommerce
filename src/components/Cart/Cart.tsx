@@ -8,7 +8,7 @@ import useCartTotals from '@/hooks/useCartTotals';
 import { getStripe } from '@/libs/loadStripe';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
-
+//
 
 const Cart: FC = () => {
 
